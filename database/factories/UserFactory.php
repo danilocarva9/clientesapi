@@ -13,6 +13,10 @@ use Faker\Generator as Faker;
 |
 */
 
+
+// php artisan tinker
+// factory('Civity\Solicitacao', 1000)->create();  
+
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
