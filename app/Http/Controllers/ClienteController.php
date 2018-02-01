@@ -52,7 +52,6 @@ class ClienteController extends Controller
      public function update(Request $request)
     {
         //NEEDS a hidden input with name "_method" and value "put"
-
  		$cliente = Cliente::findOrFail($request->input('id'));
         $cliente->cli_nome = $request->input('nome');
         $cliente->cli_email = $request->input('email');
@@ -71,7 +70,6 @@ class ClienteController extends Controller
      public function destroy(Request $request)
     {    
     	//NEEDS a hidden input with name "_method" and value "delete"
-
         $cliente = Cliente::findOrFail($request->input('id'));
         if($cliente->delete()) {
             return new ClienteResource($cliente);
