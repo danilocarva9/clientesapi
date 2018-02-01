@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 // });
 
 
-Route::group(['middleware' => 'api', 'prefix' => 'clientes'], function() {
+Route::group(['middleware' => 'auth:api', 'prefix' => 'clientes'], function() {
 	//lista de clientes
 	Route::get('all', 'ClienteController@index');
 	//pega cliente especifico

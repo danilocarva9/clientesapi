@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
-
 use App\Http\Resources\ClienteResource;
 use App\Http\Resources\CidadeResource;
+Use Auth;
 
 class ClienteController extends Controller
 {
