@@ -18,7 +18,15 @@ use Illuminate\Http\Request;
 // });
 
 
+//HINT: to return 401 unauthorized it needs to send key: Accept and Value: application/json.
+
+
+// cria novo cliente
+Route::post('userLogin','UserController@login');
+Route::post('userRegister','UserController@register');
+
 Route::group(['middleware' => 'auth:api', 'prefix' => 'clientes'], function() {
+
 	//lista de clientes
 	Route::get('all', 'ClienteController@index');
 	//pega cliente especifico

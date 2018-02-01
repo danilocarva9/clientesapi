@@ -7,10 +7,15 @@ use App\Cliente;
 use App\Http\Resources\ClienteResource;
 use App\Http\Resources\CidadeResource;
 Use Auth;
+Use Validator;
 
 class ClienteController extends Controller
 {
     
+
+
+
+
 
     public function index(){
     	 //Pega todos clientes e retorna com paginacao
@@ -34,6 +39,24 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
+
+    	//Validator
+    	$validator = Validator::make($request->all(), [
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email',
+            'endereco' => 'required|string|max:255',
+            'telefone' => 'required|string|max:255',
+            'cidade_id' => 'required|int',
+            'plano_id' => 'required|int',
+    	]);
+
+
+    	if ($validator->fails()) {
+    		return response()->json(['error'=>$validator->errors()], 401);
+    	}
+
+
+
         $cliente = new Cliente;
 		$cliente->cli_nome = $request->input('nome');
 		$cliente->cli_email = $request->input('email');
@@ -42,11 +65,13 @@ class ClienteController extends Controller
 		$cliente->cid_id = $request->input('cidade_id');   
 		$cliente->plan_id = $request->input('plano_id'); 
         //$cliente->save();
-
         if($cliente->save()) {
-            return new ClienteResource($cliente);
+            //return new ClienteResource($cliente);
+            return response()->json(['success'=>$cliente], 200);
         } 
     }
+
+
 
 
      public function update(Request $request)
