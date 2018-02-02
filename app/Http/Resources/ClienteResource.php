@@ -3,8 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
-
-use App\Http\Resources\CidadeResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class ClienteResource extends Resource
 {
@@ -17,12 +16,14 @@ class ClienteResource extends Resource
     public function toArray($request)
     {
         return [
-            'cli_id' => $this->id,
-            'cli_nome' => $this->cli_nome,
-            'cli_endereco' => $this->cli_endereco,
-            'cli_telefone' => $this->cli_telefone,
+            'cliente_id' => $this->cliente_id,
+            'cliente_nome' => $this->cliente_nome,
+            'cliente_endereco' => $this->cliente_endereco,
+            'cliente_telefone' => $this->cliente_telefone,
+            'cidade' => $this->cidade,
+            'plano' => $this->plano,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'updated_at' => $this->updated_at
         ];
     }
 }

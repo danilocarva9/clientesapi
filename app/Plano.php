@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Plano extends Model
 {
     protected $fillable = [
-        'plan_nome', 'plan_vantagens',
+        'plano_nome', 'plano_vantagens',
     ];
 
     //Plano pertence ao cliente

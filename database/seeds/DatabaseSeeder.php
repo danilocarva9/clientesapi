@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
         DB::table('cidades')->truncate();
     	DB::table('cidades')->insert([
     		// 'id' => "1",
-            'cid_nome' => "Cuiabá",
+            'cidade_nome' => "Cuiabá",
         ]);
      	DB::table('cidades')->insert([
      		// 'id' => "2",
-            'cid_nome' => "Várzea Grande",
+            'cidade_nome' => "Várzea Grande",
         ]);
 
 
@@ -32,18 +32,18 @@ class DatabaseSeeder extends Seeder
         DB::table('planos')->truncate();
     	DB::table('planos')->insert([
     		// 'id' => "1",
-            'plan_nome' => "Silver",
-            'plan_vantagens' => "Para controle financeiro de quem trabalha sozinho",
+            'plano_nome' => "Silver",
+            'plano_vantagens' => "Para controle financeiro de quem trabalha sozinho",
         ]);
      	DB::table('planos')->insert([
      		// 'id' => "2",
-            'plan_nome' => "Gold",
-            'plan_vantagens' => "Melhor opção para quem quer crescer e receber mais rápido.",      
+            'plano_nome' => "Gold",
+            'plano_vantagens' => "Melhor opção para quem quer crescer e receber mais rápido.",      
         ]);
      	DB::table('planos')->insert([
      		// 'id' => "2",
-            'plan_nome' => "Platium",
-            'plan_vantagens' => "Mais notas e boletos para sua empresa.",
+            'plano_nome' => "Platium",
+            'plano_vantagens' => "Mais notas e boletos para sua empresa.",
         ]);
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Cidade;
 use App\Http\Resources\ClienteResource;
 use App\Http\Resources\CidadeResource;
 Use Auth;
@@ -15,12 +16,11 @@ class ClienteController extends Controller
 
 
 
-
-
     public function index(){
-    	 //Pega todos clientes e retorna com paginacao
-        // $clientes = Cliente::paginate(15);
-       // return ClienteResource::collection($clientes); 
+        //Pega todos clientes e retorna com paginacao
+        //  $clientes = Cliente::paginate(15);
+        // return ClienteResource::collection($clientes); 
+       
         return ClienteResource::collection(Cliente::all()); //retorna todos
     }
 
@@ -30,7 +30,7 @@ class ClienteController extends Controller
     {
         //Get the cliente
         $cliente = Cliente::findOrfail($id);
-        // Return a single cliente
+        // Return a single cliente        
         return new ClienteResource($cliente);
     }
 

@@ -9,9 +9,8 @@ class Cliente extends Model
 {
     
     //use HasApiTokens;
-
     protected $fillable = [
-        'cli_nome', 'cli_email', 'cli_endereco', 'cli_telefone', 'cli_cidade_id', 'cli_plano_id',
+        'cliente_nome', 'cliente_email', 'cliente_endereco', 'cliente_telefone', 'cidade_id', 'plano_id',
     ];
 
 
@@ -19,13 +18,13 @@ class Cliente extends Model
     //Cliente tem uma cidade
     public function cidade()
     {
-        return $this->hasOne('App\Cidade');
+        return $this->belongsTo('App\Cidade', 'cidade_id', 'cidade_id');
     }
 
-    //Cliente tem um plano
+    // //Cliente tem um plano
     public function plano()
     {
-        return $this->hasOne('App\Plano');
+        return $this->belongsTo('App\Plano', 'plano_id', 'plano_id');
     }
 
 }

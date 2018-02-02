@@ -15,8 +15,8 @@ class CidadeResource extends Resource
     public function toArray($request)
     {
         return [
-            'cid_id' => $this->id,
-            'cid_nome' => $this->cid_nome,
+            'cidade_id' => $this->cidade_id,
+            'cidade_nome' => $this->cidade_nome,
         ];
     }
 }

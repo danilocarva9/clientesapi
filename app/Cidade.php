@@ -7,15 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Cidade extends Model
 {
     protected $fillable = [
-        'cid_nome',
+        'cidade_nome',
     ];
-
 
 
     //Cidade pertence ao cliente
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        return $this->hasMany('App\Cliente');
     }
 
 }
