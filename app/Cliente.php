@@ -18,13 +18,13 @@ class Cliente extends Model
     //Cliente tem uma cidade
     public function cidade()
     {
-        return $this->belongsTo('App\Cidade', 'cidade_id', 'cidade_id');
+        return $this->belongsTo('App\Cidade');
     }
 
     // //Cliente tem um plano
     public function plano()
     {
-        return $this->belongsTo('App\Plano', 'plano_id', 'plano_id');
+        return $this->belongsTo('App\Plano');
     }
 
 }
